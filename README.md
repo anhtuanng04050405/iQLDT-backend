@@ -1,5 +1,7 @@
 <h3 align="center">iQLDT Backend - Java Servlet & MySQL</h3>
 
+**About the iQLDT app:** iQLDT is inspired by iCTSV and eHUST (two official apps from Hanoi University of Science and Technology for students). Currently, I am building three features: Login, Extracurricular Activities, and Timetable.
+
 **Describe:**
 
 The backend is built using Java Servlet following the MVC (Model-View-Controller) pattern. It is responsible for providing an admin web interface for data management and serving JSON data to the iQLDT Android application.
