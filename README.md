@@ -55,3 +55,5 @@ The backend is built using Java Servlet following the MVC (Model-View-Controller
 >Web Server: Apache Tomcat
 >
 >Database: MySQL
+>
+>Containerization: Docker (Dockerfile)
