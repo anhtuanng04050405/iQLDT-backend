@@ -4,9 +4,9 @@ import java.sql.*;
 public class DBConnection {
     public static Connection CreateConnection(){
         Connection conn = null;
-        String url = "jdbc:mysql://localhost:3306/iqldt";
-        String username = "root";
-        String password = "1234";
+        String url = "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/iqldt?sslMode=VERIFY_IDENTITY";
+        String username = "2dttsUDTBABDmD3.root";
+        String password = "xKNSpi8N3c5yWQhb";
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
