@@ -1,5 +1,13 @@
 <h3 align="center">iQLDT Backend - Java Servlet & MySQL</h3>
 
+### 🚀 Deployment & API
+
+* **Live Demo:** [iqldt-backend.onrender.com](https://iqldt-backend.onrender.com/)
+* **API Endpoint:** [`POST`] [iqldt-backend.onrender.com/api_post](https://iqldt-backend.onrender.com/api_post)
+
+> [!NOTE]
+> **Cold Start Delay:** Hosted on Render's free instance, the server automatically enters sleep mode after periods of inactivity. The initial request may take up to **50 seconds** to spin up.
+
 **About the iQLDT app:** iQLDT is inspired by iCTSV and eHUST (two official apps from Hanoi University of Science and Technology for students). Currently, I am building three features: Login, Extracurricular Activities, and Timetable.
 
 **Describe:**
