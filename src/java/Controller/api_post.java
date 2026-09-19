@@ -19,7 +19,12 @@ public class api_post extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         
-        response.setContentType("application/json; charset=UTF-8");
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+        
         PrintWriter out = response.getWriter();
         
         List<Post> list = PostDAO.getAllPosts();
@@ -27,17 +32,24 @@ public class api_post extends HttpServlet {
         StringBuilder json = new StringBuilder();
         json.append("{\"status\":\"success\",\"data\":[");
         
-        for (int i = 0; i < list.size(); i++) {
-            Post p = list.get(i);
-            json.append("{")
-                .append("\"post_tieude\":\"").append(escapeJson(p.getTieude())).append("\",")
-                .append("\"post_batdau\":\"").append(escapeJson(p.getBatdau())).append("\",")
-                .append("\"post_ketthuc\":\"").append(escapeJson(p.getKetthuc())).append("\",")
-                .append("\"post_diadiem\":\"").append(escapeJson(p.getDiadiem())).append("\",")
-                .append("\"post_noidung\":\"").append(escapeJson(p.getNoidung())).append("\",")
-                .append("\"post_hinhanhminhhoa\":\"").append(escapeJson(p.getImgURL())).append("\"")
-                .append("}");
-            if (i < list.size() - 1) json.append(",");
+        if (list != null) {
+            for (int i = 0; i < list.size(); i++) {
+                Post p = list.get(i);
+                json.append("{")
+                    .append("\"id\":").append(p.getId()).append(",")
+                    .append("\"post_tieude\":\"").append(escapeJson(p.getTieude())).append("\",")
+                    .append("\"post_giobatdau\":\"").append(escapeJson(p.getGiobatdau())).append("\",")
+                    .append("\"post_batdau\":\"").append(escapeJson(p.getBatdau())).append("\",")
+                    .append("\"post_gioketthuc\":\"").append(escapeJson(p.getGioketthuc())).append("\",")
+                    .append("\"post_ketthuc\":\"").append(escapeJson(p.getKetthuc())).append("\",")
+                    .append("\"post_diadiem\":\"").append(escapeJson(p.getDiadiem())).append("\",")
+                    .append("\"post_noidung\":\"").append(escapeJson(p.getNoidung())).append("\",")
+                    .append("\"post_hinhanhminhhoa\":\"").append(escapeJson(p.getImgURL())).append("\"")
+                    .append("}");
+                if (i < list.size() - 1) {
+                    json.append(",");
+                }
+            }
         }
         json.append("]}");
         
@@ -50,6 +62,9 @@ public class api_post extends HttpServlet {
         return str.replace("\\", "\\\\")
                   .replace("\"", "\\\"")
                   .replace("\n", "\\n")
-                  .replace("\r", "\\r");
+                  .replace("\r", "\\r")
+                  .replace("\t", "\\t")
+                  .replace("\b", "\\b")
+                  .replace("\f", "\\f");
     }
 }

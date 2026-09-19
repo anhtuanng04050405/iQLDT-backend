@@ -24,8 +24,11 @@ public class AdminPostServlet extends HttpServlet {
         
         if ("add".equals(action)) {
             Post p = new Post();
+            
             p.setTieude(request.getParameter("tieude"));
+            p.setGiobatdau(request.getParameter("giobatdau"));
             p.setBatdau(request.getParameter("batdau"));
+            p.setGioketthuc(request.getParameter("gioketthuc"));
             p.setKetthuc(request.getParameter("ketthuc"));
             p.setDiadiem(request.getParameter("diadiem"));
             p.setNoidung(request.getParameter("noidung"));
@@ -36,8 +39,11 @@ public class AdminPostServlet extends HttpServlet {
         else if ("update".equals(action)) {
             Post p = new Post();
             p.setId(Integer.parseInt(request.getParameter("id")));
+            
             p.setTieude(request.getParameter("tieude"));
+            p.setGiobatdau(request.getParameter("giobatdau"));
             p.setBatdau(request.getParameter("batdau"));
+            p.setGioketthuc(request.getParameter("gioketthuc"));
             p.setKetthuc(request.getParameter("ketthuc"));
             p.setDiadiem(request.getParameter("diadiem"));
             p.setNoidung(request.getParameter("noidung"));

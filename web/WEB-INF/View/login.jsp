@@ -13,7 +13,7 @@
 <body>
 
 <div class="card card-login shadow-sm p-4">
-    <h4 class="text-center fw-bold text-danger mb-4">ĐĂNG NHẬP QUẢN TRỊ</h4>
+    <h4 class="text-center fw-bold text-danger mb-4">ĐĂNG NHẬP</h4>
     
     <% String msg = (String) request.getAttribute("msg"); %>
     <% if (msg != null) { %>

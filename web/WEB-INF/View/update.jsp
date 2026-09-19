@@ -47,9 +47,9 @@
                         <th style="width: 50px;">STT</th>
                         <th style="width: 80px;">Hình ảnh</th>
                         <th>Tiêu đề</th>
-                        <th style="width: 150px;">Thời gian</th>
+                        <th style="width: 200px;">Thời gian</th>
                         <th style="width: 150px;">Địa điểm</th>
-                        <th>Nội dung (Markdown)</th>
+                        <th>Nội dung</th>
                         <th style="width: 100px;">Thao tác</th>
                     </tr>
                 </thead>
@@ -62,12 +62,12 @@
                     <tr>
                         <td class="text-center fw-bold"><%= stt++ %></td>
                         <td class="text-center">
-                            <img src="<%= p.getImgURL() != null && !p.getImgURL().isEmpty() ? p.getImgURL() : "https://via.placeholder.com/60x45" %>" class="img-thumb" alt="thumb">
+                            <img src="<%= p.getImgURL() != null && !p.getImgURL().isEmpty() ? p.getImgURL() : "https://xdcs.cdnchinhphu.vn/446259493575335936/2025/8/22/bk-1755856140169844190839.jpg" %>" class="img-thumb" alt="thumb">
                         </td>
                         <td class="fw-semibold text-primary"><%= p.getTieude() %></td>
                         <td>
-                            <div class="time-start"><i class="fa-regular fa-calendar-check me-1"></i><%= p.getBatdau() %></div>
-                            <div class="time-end"><i class="fa-regular fa-calendar-xmark me-1"></i><%= p.getKetthuc() %></div>
+                            <div class="time-start"><i class="fa-regular fa-calendar-check me-1"></i><%= p.getGiobatdau() + " " + p.getBatdau() %></div>
+                            <div class="time-end"><i class="fa-regular fa-calendar-xmark me-1"></i><%= p.getGioketthuc() + " " + p.getKetthuc() %></div>
                         </td>
                         <td class="location-text">
                             <i class="fa-solid fa-location-dot me-1"></i><%= p.getDiadiem() %>
@@ -126,12 +126,22 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bold">Thời gian bắt đầu</label>
-                        <input type="text" class="form-control" name="batdau" value="<%= isEdit && postEdit.getBatdau() != null ? postEdit.getBatdau() : "" %>" placeholder="2026-09-05">
+                        <label class="form-label fw-bold">Giờ bắt đầu</label>
+                        <input type="text" class="form-control" name="giobatdau" value="<%= isEdit && postEdit.getGiobatdau() != null ? postEdit.getGiobatdau() : "" %>" placeholder="HH:MM:SS">
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bold">Thời gian kết thúc</label>
-                        <input type="text" class="form-control" name="ketthuc" value="<%= isEdit && postEdit.getKetthuc() != null ? postEdit.getKetthuc() : "" %>" placeholder="2026-09-25">
+                        <label class="form-label fw-bold">Ngày bắt đầu</label>
+                        <input type="text" class="form-control" name="batdau" value="<%= isEdit && postEdit.getBatdau() != null ? postEdit.getBatdau() : "" %>" placeholder="YYYY-MM-DD">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Giờ kết thúc</label>
+                        <input type="text" class="form-control" name="gioketthuc" value="<%= isEdit && postEdit.getGioketthuc()!= null ? postEdit.getGioketthuc(): "" %>" placeholder="HH:MM:SS">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Ngày kết thúc</label>
+                        <input type="text" class="form-control" name="ketthuc" value="<%= isEdit && postEdit.getKetthuc() != null ? postEdit.getKetthuc() : "" %>" placeholder="YYYY-MM-DD">
                     </div>
                 </div>
                 <div class="mb-3">

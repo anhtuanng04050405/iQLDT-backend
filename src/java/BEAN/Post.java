@@ -1,7 +1,24 @@
 package BEAN;
 public class Post {
     private int id;
-    private String tieude, batdau, ketthuc, diadiem, noidung, imgURL;
+    private String tieude, giobatdau, batdau, gioketthuc, ketthuc, diadiem, noidung, imgURL;
+
+    public String getGiobatdau() {
+        return giobatdau;
+    }
+
+    public void setGiobatdau(String giobatdau) {
+        this.giobatdau = giobatdau;
+    }
+
+    public String getGioketthuc() {
+        return gioketthuc;
+    }
+
+    public void setGioketthuc(String gioketthuc) {
+        this.gioketthuc = gioketthuc;
+    }
+    
     public int getId() {
         return id;
     }

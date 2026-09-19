@@ -1,6 +1,7 @@
 package DAO;
 
 import DB.DBConnection;
+import DB.HashPassword;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +13,7 @@ public class LoginDAO {
             Connection conn = DBConnection.CreateConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, username);
-            ps.setString(2, password);
+            ps.setString(2, HashPassword.hashPassword(password));
             
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
