@@ -150,7 +150,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-bold">URL Hình ảnh</label>
-                    <input type="text" class="form-control" name="imgURL" value="<%= isEdit && postEdit.getImgURL() != null ? postEdit.getImgURL() : "" %>">
+                    <input type="text" class="form-control" name="imgURL" value="<%= isEdit && postEdit.getImgURL() != null ? postEdit.getImgURL() : "https://xdcs.cdnchinhphu.vn/446259493575335936/2025/8/22/bk-1755856140169844190839.jpg" %>">
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-bold">Nội dung (Markdown)</label>
