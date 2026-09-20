@@ -4,7 +4,7 @@ import java.sql.*;
 public class DBConnection {
     public static Connection CreateConnection(){
         Connection conn = null;
-        String url = "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/iqldt?sslMode=VERIFY_IDENTITY";
+        String url = "mysql://2dttsUDTBABDmD3.root:<PASSWORD>@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/iqldt";
         String username = "2dttsUDTBABDmD3.root";
         String password = "xKNSpi8N3c5yWQhb";
         
