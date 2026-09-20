@@ -35,6 +35,12 @@ public class api_post extends HttpServlet {
         if (list != null) {
             for (int i = 0; i < list.size(); i++) {
                 Post p = list.get(i);
+                
+                String imgUrl = p.getImgURL();
+                if (imgUrl == null || imgUrl.trim().isEmpty()) {
+                    imgUrl = "https://xdcs.cdnchinhphu.vn/446259493575335936/2025/8/22/bk-1755856140169844190839.jpg";
+                }
+        
                 json.append("{")
                     .append("\"id\":").append(p.getId()).append(",")
                     .append("\"post_tieude\":\"").append(escapeJson(p.getTieude())).append("\",")
@@ -44,13 +50,16 @@ public class api_post extends HttpServlet {
                     .append("\"post_ketthuc\":\"").append(escapeJson(p.getKetthuc())).append("\",")
                     .append("\"post_diadiem\":\"").append(escapeJson(p.getDiadiem())).append("\",")
                     .append("\"post_noidung\":\"").append(escapeJson(p.getNoidung())).append("\",")
-                    .append("\"post_hinhanhminhhoa\":\"").append(escapeJson(p.getImgURL())).append("\"")
+                    .append("\"post_hinhanhminhhoa\":\"").append(escapeJson(imgUrl)).append("\"")
                     .append("}");
+
                 if (i < list.size() - 1) {
                     json.append(",");
                 }
             }
         }
+
+                
         json.append("]}");
         
         out.print(json.toString());
