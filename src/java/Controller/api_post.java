@@ -37,7 +37,9 @@ public class api_post extends HttpServlet {
                 Post p = list.get(i);
                 
                 String imgUrl = p.getImgURL();
-                if (imgUrl == null || imgUrl.trim().isEmpty()) {
+                String imgUrl = p.getImgURL();
+                
+                if (imgUrl == null || imgUrl.trim().isEmpty() || "null".equalsIgnoreCase(imgUrl.trim()) || "undefined".equalsIgnoreCase(imgUrl.trim())) {
                     imgUrl = "https://xdcs.cdnchinhphu.vn/446259493575335936/2025/8/22/bk-1755856140169844190839.jpg";
                 }
         
